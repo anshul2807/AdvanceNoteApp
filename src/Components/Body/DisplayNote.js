@@ -13,8 +13,8 @@ export default  function DisplayNote({title,note}) {
     const [open, setOpen] = React.useState(false);
 
     return (<>
-            {!open?
-       <DisplayNoteWrapper>
+            
+       <DisplayNoteWrapper open={open}>
            <CheckCircleSharpIcon className="tick-icon"/>
            <DisplayNoteTitle onClick={()=>setOpen(true)}>
                 <DisplayText className="h2">{title}</DisplayText>
@@ -34,9 +34,9 @@ export default  function DisplayNote({title,note}) {
            </DisplayNoteIcons>
            
        </DisplayNoteWrapper>
-            :
-       <TransitionsModal open={open} setOpen={setOpen}/>
-            }
+            
+       <TransitionsModal open={open} setOpen={setOpen} title={title} note={note}/>
+           
        </>
     )
 }
@@ -51,6 +51,7 @@ border: 1px solid white;
 color:white;
 border-radius:10px;
 position:relative;
+opacity:${props=> props.open?0:1};
 // max-height:300px;
 .menu{
     cursor:pointer;
