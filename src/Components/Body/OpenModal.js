@@ -45,11 +45,11 @@ export default function OpenModal({id,title,note,setOpen}){
     return (
         <OpenModalWrapper>
             <OpenModalTitle>
-                <InputField className="title" value={localtitle} onChange={(e)=>setLocalTitle(e.target.value)}/>
+                <InputField  placeholder="Title" className="title" value={localtitle} onChange={(e)=>setLocalTitle(e.target.value)}/>
             </OpenModalTitle>
 
             <OpenModalContent>
-                <InputField    autofocus="true"   className="notes" value={localnote} onChange={(e)=>setLocalNote(e.target.value)} />
+                <InputField   placeholder="note"   autofocus="true"   className="notes" value={localnote} onChange={(e)=>setLocalNote(e.target.value)} />
             </OpenModalContent>
 
             <OpenModalIcons>

@@ -12,16 +12,16 @@ export default function OpenCreateNewNote({setToogleNote}) {
 
     const [notes,setNotes] = useContext(NotesContext);
 
-    const [localnotes,setLocalNotes] = useState({id:"",title:"",note:""});
+    const [localnotes,setLocalNotes] = useState({id: Date.now().toString(),title:"",note:""});
 
     
     const handleLocalNote = () =>{
         if(localnotes.note != "" || localnotes.title != ""){
-            setLocalNotes({...localnotes,id : Date.now()})
+            // setLocalNotes({...localnotes, id : Date.now().toString() })
             setNotes([localnotes,...notes])
             
             setLocalNotes({id:"",title:"",note:""})
-        
+            console.log( Date.now().toString());
         }
         setToogleNote(false)
     }
@@ -33,7 +33,7 @@ export default function OpenCreateNewNote({setToogleNote}) {
             </OpenModalTitle>
 
             <OpenModalContent>
-                <InputField value={localnotes.note} onChange={(e)=>setLocalNotes({...localnotes,note : e.target.value})} placeholder="Take a note..."  rows="1" className="content"  autoFocus="true"  />
+                <InputField  value={localnotes.note} onChange={(e)=>setLocalNotes({...localnotes,note : e.target.value})} placeholder="Take a note..."  rows="1" className="content"  autoFocus="true"  />
             </OpenModalContent>
             <NewNoteIcons>
                     <NewNoteIconsLeft>

@@ -19,6 +19,8 @@ export default  function DisplayNote({id,title,note}) {
             
        <DisplayNoteWrapper open={open}>
            <CheckCircleSharpIcon className="tick-icon"/>
+            {(title==note=="")?
+            <>
            <DisplayNoteTitle onClick={()=>setOpen(true)}>
                 <DisplayText className="h2">{title}</DisplayText>
            </DisplayNoteTitle>
@@ -27,6 +29,12 @@ export default  function DisplayNote({id,title,note}) {
                 {note}
                 </DisplayText>
            </DisplayNoteContent>
+           </>
+                :
+           <DisplayNothing  onClick={()=>setOpen(true)}>
+               <DisplayText className="nothing">Empty Note</DisplayText>
+           </DisplayNothing>
+           }
            <DisplayNoteIcons className="icon-active">
                 <AddAlertOutlinedIcon className="menu"/>
                 <PersonAddOutlinedIcon className="menu"/>
@@ -124,5 +132,15 @@ const DisplayText = styled.p`
 &.h4{
     font-weight:400;
 }
+&.nothing{
+    font-size:30px;
+}
 `;
 
+const DisplayNothing = styled.div`
+// background:red;
+padding-top: 10px;
+text-align:center;
+opacity: 0.5;
+// height : 50%;
+`;
