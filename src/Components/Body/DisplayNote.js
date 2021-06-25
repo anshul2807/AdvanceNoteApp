@@ -9,8 +9,11 @@ import MoreVertOutlinedIcon from '@material-ui/icons/MoreVertOutlined';
 import CheckCircleSharpIcon from '@material-ui/icons/CheckCircleSharp';
 import TransitionsModal from './TransitionModal';
 
-export default  function DisplayNote({title,note}) {
+
+export default  function DisplayNote({id,title,note}) {
     const [open, setOpen] = React.useState(false);
+
+   
 
     return (<>
             
@@ -30,12 +33,13 @@ export default  function DisplayNote({title,note}) {
                 <ColorLensOutlinedIcon className="menu"/>
                 <ImageOutlinedIcon className="menu"/>
                 <ArchiveOutlinedIcon className="menu"/>
-                <MoreVertOutlinedIcon className="menu"/>
+                <MoreVertOutlinedIcon  className="menu"/>
+                   
            </DisplayNoteIcons>
            
        </DisplayNoteWrapper>
             
-       <TransitionsModal open={open} setOpen={setOpen} title={title} note={note}/>
+       <TransitionsModal open={open} setOpen={setOpen} id={id} title={title} note={note}/>
            
        </>
     )

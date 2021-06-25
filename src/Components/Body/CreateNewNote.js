@@ -5,10 +5,10 @@ import BrushIcon from '@material-ui/icons/Brush';
 import ImageOutlinedIcon from '@material-ui/icons/ImageOutlined';
 
 
-export default function CreateNewNote() {
+export default function CreateNewNote({setToogleNote}) {
     return (
-        <NewNoteWrapper>
-            <NewNoteHeader>Take a note...</NewNoteHeader>
+        <NewNoteWrapper >
+            <NewNoteHeader  onClick={()=>setToogleNote(true)}>Take a note...</NewNoteHeader>
             <NewNoteIcons>
                 <CheckBoxOutlinedIcon className="menu"/>
                 <BrushIcon className="menu"/>
@@ -27,7 +27,7 @@ const NewNoteWrapper = styled.div`
         box-shadow: 0px 2px 5px 2px rgba(0,0,0,0.75);
         -webkit-box-shadow: 0px 2px 5px 2px rgba(0,0,0,0.75);
         -moz-box-shadow: 0px 2px 5px 2px rgba(0,0,0,0.75);
-        width:598px;
+        width:600px;
         height:46px;
         opacity:0.7;
         border-radius: 10px;

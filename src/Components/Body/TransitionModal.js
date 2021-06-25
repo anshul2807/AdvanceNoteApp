@@ -10,16 +10,19 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+    
   },
   paper: {
-    backgroundColor: theme.palette.background.paper,
-    border: '2px solid #000',
+    // backgroundColor: theme.palette.background.paper,
+    border: '1px solid #fff',
     boxShadow: theme.shadows[5],
-   
+    background : '#202124',
+    borderRadius: '10px',
+    
   },
 }));
 
-export default function TransitionsModal({open,setOpen,title,note}) {
+export default function TransitionsModal({open,setOpen,id,title,note}) {
   const classes = useStyles();
 
 
@@ -46,7 +49,7 @@ export default function TransitionsModal({open,setOpen,title,note}) {
       >
         <Fade in={open}>
           <div className={classes.paper}>
-            <OpenModal title={title} note={note}/>
+            <OpenModal id={id} title={title} note={note} setOpen={setOpen}/>
           </div>
         </Fade>
       </Modal>
