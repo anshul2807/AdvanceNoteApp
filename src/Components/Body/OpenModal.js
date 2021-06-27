@@ -80,11 +80,23 @@ background : #202124;
 color : white;
 padding : 10px 10px 0px 10px;
 border-radius:10px;
+
+
+@media (max-width: 940px)
+{
+ width:300px;
+ max-height:400px;
+}
+
 `;
 
 const OpenModalTitle = styled.div`
 max-height: 100px;
 margin-bottom:5px;
+@media (max-width: 940px)
+{
+    height: 60px;
+}
 `;
 
 const OpenModalContent = styled.div`
@@ -92,7 +104,10 @@ height: 400px;
 // height:100%;
 // background:red;
 
-
+@media (max-width: 940px)
+{
+    height: 200px;
+}
 `;
 
 const OpenModalIcons = styled.div`

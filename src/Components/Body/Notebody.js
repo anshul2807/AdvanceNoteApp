@@ -68,9 +68,16 @@ const NoteDisplayWrapper = styled.div`
 align-items:baseline;
 
 display: grid;
-${props=>props.displaylist?"grid-template-rows: auto auto auto":"grid-template-columns: auto auto auto"};
+
+ 
+ @media (min-width: 940px)
+ {
+    ${props=>props.displaylist?"grid-template-rows: auto auto auto":"grid-template-columns: auto auto auto"};
  ;
-
-
+ }
+ @media (max-width: 940px)
+ {
+    grid-template-rows: auto auto auto;
+ }
 
 `;

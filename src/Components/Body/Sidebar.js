@@ -75,8 +75,16 @@ const SideWrapper = styled.div`
     }
     .iconstitle{
         cursor: pointer;
-        opacity: 0.7;
+        
     }
+    @media (max-width: 940px)
+        {
+            position:absolute;
+            z-index : 1;
+            .icons{
+                opacity:1;
+            }
+        }
 `;
 
 const ItemWrapper = styled.div`

@@ -38,7 +38,7 @@ export default function Navbar() {
       <NavWrapper  colorsI={inputcolor}>
         <MenuSharpIcon className="menu" fontSize="medium" color="inherit" onClick={()=>setSideToggle(!sideToggle)}/> 
         <Heading>Keep Notes</Heading>
-        <InputWrapper inputclose={inputclose} onFocus={(e) => {setInputColor(true)}} onBlur={(e) => {setInputColor(false)}} colorsI={inputcolor}>
+        <InputWrapper className="mobile" inputclose={inputclose} onFocus={(e) => {setInputColor(true)}} onBlur={(e) => {setInputColor(false)}} colorsI={inputcolor}>
             <SearchRoundedIcon colorsI={inputcolor} className="menu search-icon"  />
             <Input colorsI={inputcolor}  onClick={handleInputcloseV2} value={search} onChange={e=> setSearch(e.target.value)} />
             <CloseIcon colorsI={inputcolor}   className="menu inputcloses search-icon"  onClick={handleInputcloseV1}/>
@@ -46,9 +46,9 @@ export default function Navbar() {
         <RighWrapper>
             <RefreshIcon className="menu" fontSize="medium" />
             {!displaylist?
-            <ViewStreamOutlinedIcon onClick={()=>setDisplayList(!displaylist)} className="menu" fontSize="medium"/>
+            <ViewStreamOutlinedIcon onClick={()=>setDisplayList(!displaylist)} className="menu mobile" fontSize="medium"/>
             :
-            <ViewCompactOutlinedIcon onClick={()=>setDisplayList(!displaylist)} className="menu" fontSize="medium"/>
+            <ViewCompactOutlinedIcon onClick={()=>setDisplayList(!displaylist)} className="menu mobile" fontSize="medium"/>
             }
             <SettingsIcon className="menu" fontSize="medium"/>
             <AccountCircleRoundedIcon className="menu" fontSize="medium" />
@@ -98,12 +98,22 @@ const NavWrapper = styled.div`
        
         
     }
+    @media (max-width: 940px)
+    {
+     .mobile{
+      display:none;   
+     }  
+    }
     
 `;
 
 const Heading = styled.h1`
   cursor:pointer;
   opacity:0.9;
+  @media (max-width: 940px)
+  {
+   font-size: 25px;  
+  }
 `;
 
 const InputWrapper = styled.div`

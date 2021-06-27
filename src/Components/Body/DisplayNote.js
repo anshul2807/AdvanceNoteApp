@@ -104,6 +104,15 @@ opacity:${props=> props.open?0:1};
     -webkit-box-shadow: 0px 2px 5px 2px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 2px 5px 2px rgba(0,0,0,0.75);
 }
+@media (max-width: 940px)
+{
+   width:360px;
+   .icon-active{
+    opacity:0.7;
+    cursor:pointer;
+}
+
+}
 
 
 `;

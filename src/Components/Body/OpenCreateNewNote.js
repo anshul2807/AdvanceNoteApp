@@ -71,6 +71,10 @@ color : white;
 padding: 10px 0px 0 0px;
 border-radius: 10px;
 opacity:0.7;
+@media (max-width: 940px)
+       {
+           width : 360px;
+       }
 
 `;
 

@@ -40,6 +40,10 @@ const NewNoteWrapper = styled.div`
         .menu:hover{
             background: #303236;
         }
+       @media (max-width: 940px)
+       {
+           width : 360px;
+       }
         
 `;
 const NewNoteIcons = styled.div`
