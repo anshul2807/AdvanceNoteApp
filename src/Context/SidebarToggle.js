@@ -3,7 +3,7 @@ import React ,{ createContext, useState} from 'react'
 export const SidebarToggleContext = createContext();
 
 export const SidebarToggleProvider = (props)=> {
-    const [sideToggle,setSideToggle] = useState(true);
+    const [sideToggle,setSideToggle] = useState(false);
     return (
         <SidebarToggleContext.Provider value={ [sideToggle,setSideToggle]}>
             {props.children}
