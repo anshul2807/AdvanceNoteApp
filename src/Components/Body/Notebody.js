@@ -6,12 +6,13 @@ import {NotesContext} from '../../Context/Notes'
 import OpenCreateNewNote from './OpenCreateNewNote'
 import BlankPage from '../BlankPage/BlankPage'
 import WbIncandescentRoundedIcon from '@material-ui/icons/WbIncandescentRounded';
+import {DisplayListContext} from '../../Context/DisplayList'
 
 export default  function Notebody() {
 
     const [notes,setNotes] = useContext(NotesContext);
    const [togglenote,setToogleNote] = useState(false);
-
+   const [displaylist,setDisplayList] =  useContext(DisplayListContext);
 
  
 
@@ -25,7 +26,7 @@ export default  function Notebody() {
                }
            </NoteCreateWrapper>
            {notes.length != 0?
-           <NoteDisplayWrapper>
+           <NoteDisplayWrapper displaylist={displaylist}>
                {notes.map(note => 
                     <DisplayNote key={note.id} id={note.id} className="item" title={note.title} note={note.note} />
                )}
@@ -45,6 +46,7 @@ const NoteWrapper = styled.div`
         
        align-items:center;
         width:100%;
+        
        
 `;
 
@@ -66,9 +68,9 @@ const NoteDisplayWrapper = styled.div`
 align-items:baseline;
 
 display: grid;
-grid-template-columns: auto auto auto ;
+${props=>props.displaylist?"grid-template-rows: auto auto auto":"grid-template-columns: auto auto auto"};
+ ;
 
-// flex-flow: row wrap;
-// align-content:stretch;
+
 
 `;

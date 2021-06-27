@@ -8,6 +8,8 @@ import AccountCircleRoundedIcon from '@material-ui/icons/AccountCircleRounded';
 import ViewStreamOutlinedIcon from '@material-ui/icons/ViewStreamOutlined';
 import { useState,useContext } from "react";
 import {SidebarToggleContext} from '../../Context/SidebarToggle';
+import {DisplayListContext} from '../../Context/DisplayList'
+import ViewCompactOutlinedIcon from '@material-ui/icons/ViewCompactOutlined';
 
 
 export default function Navbar() {
@@ -16,7 +18,7 @@ export default function Navbar() {
 
     const [inputclose,setInputClose] = useState(false);
     const [search,setSearch] = useState('')
-
+    const [displaylist,setDisplayList] =  useContext(DisplayListContext);
    
     
     const handleInputcloseV1 = () =>{
@@ -43,7 +45,11 @@ export default function Navbar() {
         </InputWrapper>
         <RighWrapper>
             <RefreshIcon className="menu" fontSize="medium" />
-            <ViewStreamOutlinedIcon  className="menu" fontSize="medium"/>
+            {!displaylist?
+            <ViewStreamOutlinedIcon onClick={()=>setDisplayList(!displaylist)} className="menu" fontSize="medium"/>
+            :
+            <ViewCompactOutlinedIcon onClick={()=>setDisplayList(!displaylist)} className="menu" fontSize="medium"/>
+            }
             <SettingsIcon className="menu" fontSize="medium"/>
             <AccountCircleRoundedIcon className="menu" fontSize="medium" />
         </RighWrapper>

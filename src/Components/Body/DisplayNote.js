@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useContext} from 'react'
 import styled  from "styled-components";
 import AddAlertOutlinedIcon from '@material-ui/icons/AddAlertOutlined';
 import PersonAddOutlinedIcon from '@material-ui/icons/PersonAddOutlined';
@@ -8,16 +8,24 @@ import ArchiveOutlinedIcon from '@material-ui/icons/ArchiveOutlined';
 import MoreVertOutlinedIcon from '@material-ui/icons/MoreVertOutlined';
 import CheckCircleSharpIcon from '@material-ui/icons/CheckCircleSharp';
 import TransitionsModal from './TransitionModal';
+import {DisplayListContext} from '../../Context/DisplayList'
+import {NotesContext} from '../../Context/Notes'
 
 
 export default  function DisplayNote({id,title,note}) {
     const [open, setOpen] = React.useState(false);
 
-   
+    const [displaylist,setDisplayList] =  useContext(DisplayListContext);
+
+    const [notes,setNotes] = useContext(NotesContext);
+
+    const handleDeleteNote = ()=>{
+        setNotes([...notes.filter(n=> n.id != id)])
+    }
 
     return (<>
             
-       <DisplayNoteWrapper open={open}>
+       <DisplayNoteWrapper open={open} displaylist={displaylist}>
            <CheckCircleSharpIcon className="tick-icon"/>
             {(title==note=="")?
             <>
@@ -41,7 +49,7 @@ export default  function DisplayNote({id,title,note}) {
                 <ColorLensOutlinedIcon className="menu"/>
                 <ImageOutlinedIcon className="menu"/>
                 <ArchiveOutlinedIcon className="menu"/>
-                <MoreVertOutlinedIcon  className="menu"/>
+                <MoreVertOutlinedIcon onClick={handleDeleteNote}  className="menu"/>
                    
            </DisplayNoteIcons>
            
@@ -58,7 +66,8 @@ const DisplayNoteWrapper = styled.div`
 margin:10px;
 display:flex;
 flex-direction:column;
-width:230px;
+width:${props=>!props.displaylist?"230px":"600px"};
+
 border: 1px solid white;
 color:white;
 border-radius:10px;

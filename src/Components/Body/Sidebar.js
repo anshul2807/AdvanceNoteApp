@@ -8,43 +8,46 @@ import ArchiveOutlinedIcon from '@material-ui/icons/ArchiveOutlined';
 import DeleteOutlineOutlinedIcon from '@material-ui/icons/DeleteOutlineOutlined';
 import {SidebarToggleContext} from '../../Context/SidebarToggle'
 
+
 export default function Sidebar() {
 
     const [sideToggle,setSideToggle] = useContext(SidebarToggleContext);
+
+   
 
     return (
         <SideWrapper sideToggle={sideToggle}>
             <ItemWrapper className="items active">
                 <WbIncandescentOutlinedIcon className="icons"/>
-                <ItemLabel>Notes</ItemLabel>
+                <ItemLabel className="iconstitle">Notes</ItemLabel>
             </ItemWrapper>
             <ItemWrapper className="items">
                 <NotificationsOutlinedIcon  className="icons"/>
-                <ItemLabel>Reminder</ItemLabel>
+                <ItemLabel  className="iconstitle">Reminder</ItemLabel>
             </ItemWrapper>
             <ItemWrapper className="items">
                 <LabelOutlinedIcon  className="icons"/>
-                <ItemLabel>Label</ItemLabel>
+                <ItemLabel  className="iconstitle">Label</ItemLabel>
             </ItemWrapper>
             <ItemWrapper className="items">
                 <LabelOutlinedIcon  className="icons"/>
-                <ItemLabel>Label</ItemLabel>
+                <ItemLabel  className="iconstitle">Label</ItemLabel>
             </ItemWrapper>
             <ItemWrapper className="items">
                 <LabelOutlinedIcon  className="icons"/>
-                <ItemLabel>Label</ItemLabel>
+                <ItemLabel  className="iconstitle">Label</ItemLabel>
             </ItemWrapper>
             <ItemWrapper className="items">
                 <EditOutlinedIcon className="icons" />
-                <ItemLabel>Edit Label</ItemLabel>
+                <ItemLabel  className="iconstitle">Edit Label</ItemLabel>
             </ItemWrapper>
             <ItemWrapper className="items">
                 <ArchiveOutlinedIcon  className="icons"/>
-                <ItemLabel>Archive</ItemLabel>
+                <ItemLabel  className="iconstitle">Archive</ItemLabel>
             </ItemWrapper>
             <ItemWrapper className="items">
                 <DeleteOutlineOutlinedIcon  className="icons"/>
-                <ItemLabel>Trash</ItemLabel>
+                <ItemLabel  className="iconstitle">Trash</ItemLabel>
             </ItemWrapper>
         </SideWrapper>
     )
@@ -69,6 +72,10 @@ const SideWrapper = styled.div`
      }
      .active:hover{
         background:#41331C;
+    }
+    .iconstitle{
+        cursor: pointer;
+        opacity: 0.7;
     }
 `;
 

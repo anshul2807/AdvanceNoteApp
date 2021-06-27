@@ -8,6 +8,8 @@ import ArchiveOutlinedIcon from '@material-ui/icons/ArchiveOutlined';
 import MoreVertOutlinedIcon from '@material-ui/icons/MoreVertOutlined';
 import {NotesContext} from '../../Context/Notes'
 
+
+
 export default function OpenCreateNewNote({setToogleNote}) {
 
     const [notes,setNotes] = useContext(NotesContext);
@@ -28,6 +30,7 @@ export default function OpenCreateNewNote({setToogleNote}) {
 
     return (
        <NewNoteWrapper >
+          
             <OpenModalTitle>
                 <InputField value={localnotes.title} onChange={(e)=>setLocalNotes({...localnotes,title : e.target.value})} placeholder="Title" rows="1" className="title"/>
             </OpenModalTitle>

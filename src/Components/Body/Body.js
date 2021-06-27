@@ -18,4 +18,5 @@ const BodyWrapper = styled.div`
         margin-top:65px;
         border-top:1px solid #525355;
         min-height:90vh;
+        
 `;

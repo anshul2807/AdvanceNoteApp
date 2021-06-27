@@ -1,11 +1,17 @@
+import styled  from "styled-components";
 import './App.css';
 import Navbar from './Components/NavBar/Navbar'
 import Body from './Components/Body/Body'
 export default function App() {
   return (
-    <div className="App">
+    <Apps>
       <Navbar />
       <Body />
-    </div>
+    </Apps>
   );
 }
+
+
+const Apps = styled.div`
+
+`;
