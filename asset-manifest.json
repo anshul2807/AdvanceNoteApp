@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/AdvanceNoteApp/static/css/main.6c5fd545.chunk.css",
+    "main.js": "/AdvanceNoteApp/static/js/main.381df59b.chunk.js",
+    "main.js.map": "/AdvanceNoteApp/static/js/main.381df59b.chunk.js.map",
+    "runtime-main.js": "/AdvanceNoteApp/static/js/runtime-main.ac71a145.js",
+    "runtime-main.js.map": "/AdvanceNoteApp/static/js/runtime-main.ac71a145.js.map",
+    "static/js/2.14ddf60d.chunk.js": "/AdvanceNoteApp/static/js/2.14ddf60d.chunk.js",
+    "static/js/2.14ddf60d.chunk.js.map": "/AdvanceNoteApp/static/js/2.14ddf60d.chunk.js.map",
+    "index.html": "/AdvanceNoteApp/index.html",
+    "static/css/main.6c5fd545.chunk.css.map": "/AdvanceNoteApp/static/css/main.6c5fd545.chunk.css.map",
+    "static/js/2.14ddf60d.chunk.js.LICENSE.txt": "/AdvanceNoteApp/static/js/2.14ddf60d.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ac71a145.js",
+    "static/js/2.14ddf60d.chunk.js",
+    "static/css/main.6c5fd545.chunk.css",
+    "static/js/main.381df59b.chunk.js"
+  ]
+}

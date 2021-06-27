@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/App.css"],"names":[],"mappings":"AAAA,EACE,QAAW,CACX,SAAY,CACZ,sCAEF","file":"main.6c5fd545.chunk.css","sourcesContent":["*{\n  margin: 0px;\n  padding: 0px;\n  font-family: 'Titillium Web', sans-serif;\n\n}\n"]}
